@@ -1,0 +1,25 @@
+import uiautomator2 as u2
+import adbutils as a2
+import time
+from ppadb.client import Client as AdbClient
+
+class Android:
+    client = AdbClient(host='127.0.0.1', port=5037)
+
+    def __init__(self, deviceid: str):
+        self.deviceid = deviceid
+        self.d = u2.connect(self.deviceid)
+        self.a = a2.AdbClient(self.deviceid)
+
+
+    def unlock_screen(self):
+        self.d.shell('input keyevent 26')
+
+
+    def quick_panel(self):
+        self.d.open_quick_settings()
+
+
+    def wait(self, number):
+        pass
+
