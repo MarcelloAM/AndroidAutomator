@@ -13,13 +13,20 @@ class Android:
 
 
     def unlock_screen(self):
-        self.d.shell('input keyevent 26')
+        self.d.shell('input keyevent 82')
+
+        return 0
 
 
     def quick_panel(self):
         self.d.open_quick_settings()
 
+        return 0
 
-    def wait(self, number):
-        pass
+
+    def wait(self, number: int):
+        if number != int:
+            print('Número precisa ser um inteiro.')
+        else:
+            time.sleep(number)
 
