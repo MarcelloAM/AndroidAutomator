@@ -11,14 +11,11 @@ class Android:
         self.d = u2.connect(self.deviceid)
         self.a = a2.AdbClient(self.deviceid)
 
-
     def unlock_screen(self):
         return   self.d.shell('input keyevent 82')
 
-
     def quick_panel(self):
         return self.d.open_quick_settings()
-
 
     def wait(self, number: int):
         if number != int:
@@ -26,6 +23,5 @@ class Android:
         else:
             time.sleep(number)
 
-
     def close_apps(self):
-        pass
+        return  self.d.app_stop_all()
