@@ -13,15 +13,11 @@ class Android:
 
 
     def unlock_screen(self):
-        self.d.shell('input keyevent 82')
-
-        return 0
+        return   self.d.shell('input keyevent 82')
 
 
     def quick_panel(self):
-        self.d.open_quick_settings()
-
-        return 0
+        return self.d.open_quick_settings()
 
 
     def wait(self, number: int):
@@ -30,3 +26,6 @@ class Android:
         else:
             time.sleep(number)
 
+
+    def close_apps(self):
+        pass
