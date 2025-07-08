@@ -12,7 +12,7 @@ class Android:
         self.a = a2.AdbClient(self.deviceid)
 
     def unlock_screen(self):
-        return   self.d.shell('input keyevent 82')
+        return  self.d.shell('input keyevent 82')
 
     def quick_panel(self):
         return self.d.open_quick_settings()
@@ -25,3 +25,6 @@ class Android:
 
     def close_apps(self):
         return  self.d.app_stop_all()
+
+    def settings_cell(self):
+        return self.d.shell('am start -n com.android.settings/.Settings')
