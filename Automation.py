@@ -5,9 +5,7 @@ from AutomatorAndroid import Android
 
 def teste(device):
     device.unlock_screen()
-    device.quick_panel()
-    time.sleep(2)
-    device.d.keyevent('home')
+
 
 
 if __name__ == '__main__':
