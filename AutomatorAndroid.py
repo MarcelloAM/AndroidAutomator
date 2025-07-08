@@ -28,3 +28,10 @@ class Android:
 
     def settings_cell(self):
         return self.d.shell('am start -n com.android.settings/.Settings')
+
+    def open_whats(self):
+        pass
+
+    @property
+    def swipe(self, direction):
+        pass
