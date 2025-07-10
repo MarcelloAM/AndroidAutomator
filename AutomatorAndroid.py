@@ -12,16 +12,13 @@ class Android:
         self.a = a2.AdbClient(self.deviceid)
 
     def unlock_screen(self):
-        return  self.d.shell('input keyevent 82')
+        return  self.d.keyevent('wakeup')
 
     def quick_panel(self):
         return self.d.open_quick_settings()
 
     def wait(self, number: int):
-        if number != int:
-            print('Número precisa ser um inteiro.')
-        else:
-            time.sleep(number)
+        return time.sleep(number)
 
     def close_apps(self):
         return  self.d.app_stop_all()
@@ -30,8 +27,4 @@ class Android:
         return self.d.shell('am start -n com.android.settings/.Settings')
 
     def open_whats(self):
-        pass
-
-    @property
-    def swipe(self, direction):
         pass
