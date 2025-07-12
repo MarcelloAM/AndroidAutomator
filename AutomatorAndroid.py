@@ -2,6 +2,7 @@ import uiautomator2 as u2
 import adbutils as a2
 import time
 from ppadb.client import Client as AdbClient
+import xml.etree.ElementTree as ET
 
 class Android:
     client = AdbClient(host='127.0.0.1', port=5037)
@@ -27,4 +28,11 @@ class Android:
         return self.d.shell('am start -n com.android.settings/.Settings')
 
     def open_whats(self):
-        pass
+        self.d.app_start('com.whatsapp')
+
+    def search(self):
+        self.d.keyevent('search')
+
+    def input_text(self, text: str):
+        self.d.shell(f'input text "{text}"')
+
