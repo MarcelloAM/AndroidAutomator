@@ -42,3 +42,5 @@ class Android:
     def click_by_resource_id(self, resource_id: str):
         self.d.xpath(f'{resource_id}').click()
 
+    def swipe_up(self):
+        self.d.swipe(0.1, 0.9, 0.9, 0.1)
