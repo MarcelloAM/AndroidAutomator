@@ -39,4 +39,6 @@ class Android:
     def click_by_text(self, text: str):
         self.d.xpath(f'//*[@text="{text}"').click()
 
+    def click_by_resource_id(self, resource_id: str):
+        self.d.xpath(f'{resource_id}').click()
 
