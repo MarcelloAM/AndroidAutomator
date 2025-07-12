@@ -36,3 +36,7 @@ class Android:
     def input_text(self, text: str):
         self.d.shell(f'input text "{text}"')
 
+    def click_by_text(self, text: str):
+        self.d.xpath(f'//*[@text="{text}"').click()
+
+
