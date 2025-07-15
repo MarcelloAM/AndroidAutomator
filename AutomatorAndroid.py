@@ -1,8 +1,13 @@
 import uiautomator2 as u2
 import adbutils as a2
 import time
+
+from packaging.licenses import EXCEPTIONS
 from ppadb.client import Client as AdbClient
 import xml.etree.ElementTree as ET
+
+from uiautomator2 import XPathElementNotFoundError
+
 
 class Android:
     client = AdbClient(host='127.0.0.1', port=5037)
@@ -47,3 +52,13 @@ class Android:
 
     def swipe_up(self):
         self.d.swipe(0.1, 0.9, 0.9, 0.1)
+
+    def close_all_apps(self):
+        self.d.keyevent('app_switch')
+        time.sleep(2)
+        try:
+            self.click_by_resource_id('com.sec.android.app.launcher:id/clear_all')
+        except XPathElementNotFoundError:
+            pass
+
+        return 0
