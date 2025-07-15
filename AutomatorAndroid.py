@@ -27,8 +27,8 @@ class Android:
     def settings_cell(self):
         return self.d.shell('am start -n com.android.settings/.Settings')
 
-    def open_whats(self):
-        self.d.app_start('com.whatsapp')
+    def open_app(self, application: str):
+        return self.d.app_start(f'{application}')
 
     def search(self):
         self.d.keyevent('search')
@@ -42,8 +42,8 @@ class Android:
     def click_by_resource_id(self, resource_id: str):
         self.d.xpath(f'{resource_id}').click()
 
-    def swipe_up(self):
-        self.d.swipe(0.1, 0.9, 0.9, 0.1)
-
     def click_by_position(self, x, y):
         return self.d.click(x, y)
+
+    def swipe_up(self):
+        self.d.swipe(0.1, 0.9, 0.9, 0.1)
