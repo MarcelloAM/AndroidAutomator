@@ -26,9 +26,6 @@ class Android:
     def wait(self, number: int):
         return time.sleep(number)
 
-    def close_apps(self):
-        return  self.d.app_stop_all()
-
     def settings_cell(self):
         return self.d.shell('am start -n com.android.settings/.Settings')
 
@@ -51,7 +48,7 @@ class Android:
         return self.d.click(x, y)
 
     def swipe_up(self):
-        self.d.swipe(0.1, 0.9, 0.9, 0.1)
+        self.d.swipe(0.1    , 0.9, 0.9, 0.1)
 
     def close_all_apps(self):
         self.d.keyevent('app_switch')
