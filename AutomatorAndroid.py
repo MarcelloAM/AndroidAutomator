@@ -32,22 +32,22 @@ class Android:
         return self.d.app_start(f'{application}')
 
     def search(self):
-        self.d.keyevent('search')
+        return self.d.keyevent('search')
 
     def input_text(self, text: str):
-        self.d.shell(f'input text "{text}"')
+        return self.d.shell(f'input text "{text}"')
 
     def click_by_text(self, text: str):
-        self.d.xpath(f'//*[@text="{text}"').click()
+        return self.d.xpath(f'//*[@text="{text}"').click()
 
     def click_by_resource_id(self, resource_id: str):
-        self.d.xpath(f'{resource_id}').click()
+        return self.d.xpath(f'{resource_id}').click()
 
     def click_by_position(self, x, y):
         return self.d.click(x, y)
 
     def swipe_up(self):
-        self.d.swipe(0.1    , 0.9, 0.9, 0.1)
+        return self.d.swipe(0.1    , 0.9, 0.9, 0.1)
 
     def close_all_apps(self):
         self.d.keyevent('app_switch')
