@@ -1,7 +1,6 @@
 import uiautomator2 as u2
 import adbutils as a2
 import time
-
 from packaging.licenses import EXCEPTIONS
 from ppadb.client import Client as AdbClient
 import xml.etree.ElementTree as ET
