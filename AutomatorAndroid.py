@@ -1,10 +1,8 @@
 import uiautomator2 as u2
 import adbutils as a2
 import time
-from packaging.licenses import EXCEPTIONS
 from ppadb.client import Client as AdbClient
 import xml.etree.ElementTree as ET
-
 from uiautomator2 import XPathElementNotFoundError
 
 
@@ -58,3 +56,9 @@ class Android:
             pass
 
         return 0
+
+    def open_site(self, url: str):
+        return self.d.open_url(url)
+
+    def open_browser(self, browser: str):
+        pass
